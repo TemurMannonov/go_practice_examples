@@ -9,7 +9,6 @@ func fibonacci() func() int {
 		f2, f1 = f1, fib + f1
 		return fib
 	}
-	
 }
 
 func main() {
