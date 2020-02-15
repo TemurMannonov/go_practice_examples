@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/empty.proto";
+
+message Task {
+    int64 Id = 1;
+    string Assignee = 2;
+    string Title = 3;
+    string Deadline = 4;
+    bool Done = 5;
+}
+
+message TaskId {
+    int64 Id = 1;
+}
+
+message Tasks {
+    repeated Task tasks = 1;
+}
+
+message Status {
+    string status = 1;
+}
+
+service TaskManager {
+    rpc Add(Task) returns(Task);
+    rpc Update(Task) returns(Task);
+    rpc MakeDone(TaskId) returns(Status);
+    rpc Delete(TaskId) returns(Status);
+    rpc GetAll(google.protobuf.Empty) returns(Tasks);
+    rpc GetFinished(google.protobuf.Empty) returns(Tasks);
+    rpc GetNotFinished(google.protobuf.Empty) returns(Tasks);
+}
