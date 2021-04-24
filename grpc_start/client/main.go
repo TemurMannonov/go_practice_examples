@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/TemurMannonov/proto"
+	"github.com/TemurMannonov/go_practice_examples/grpc_start/proto"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
